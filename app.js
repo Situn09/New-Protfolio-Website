@@ -45,7 +45,24 @@
     document.querySelector(".theme-btn").addEventListener("click", () => {
         document.body.classList.toggle("light-mode");
     })
-    document.querySelector('.blog').addEventListener('click', () => {
-        document.getElementById("blogs").classList.add()
-    })
+    // document.querySelector('.blog').addEventListener('click', () => {
+    //     document.getElementById("blogs").classList.add()
+    // })
 })();
+
+function sendEmail() {
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "chiranjivrao37@gmail.com",
+        Password: "0A9F4C155DBC469512A70269F8E0C181C0C1",
+        From : 'chiranjivrao37@gmail.com',
+        To : document.getElementById("email").value,
+        Subject : "New Contact From Enquiry" ,
+        Body: "Name : " + document.getElementById("name").value
+            + "<br> Email: " + document.getElementById("email").value
+            + "<br> Phone no: " + document.getElementById("subject").value
+            +"<br> Message: "+ document.getElementById("message").value,
+    }).then(
+      message => alert("Message Sent Succesfully")
+    );
+}
