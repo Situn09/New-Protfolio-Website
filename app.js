@@ -12,29 +12,29 @@
   });
 })();
 // implemented lazy loading
-document.addEventListener("DOMContentLoaded", function () {
-  var lazyImages = document.querySelectorAll("img[data-src]");
+// document.addEventListener("DOMContentLoaded", function () {
+//   var lazyImages = document.querySelectorAll("img[data-src]");
 
-  var options = {
-    threshold: 0.5, // Trigger when image is 50% in view
-  };
+//   var options = {
+//     threshold: 0.5, // Trigger when image is 50% in view
+//   };
 
-  var lazyLoad = function (entries, observer) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        var img = entry.target;
-        img.src = img.getAttribute("data-src");
-        img.removeAttribute("data-src");
-        observer.unobserve(img);
-      }
-    });
-  };
+//   var lazyLoad = function (entries, observer) {
+//     entries.forEach(function (entry) {
+//       if (entry.isIntersecting) {
+//         var img = entry.target;
+//         img.src = img.getAttribute("data-src");
+//         img.removeAttribute("data-src");
+//         observer.unobserve(img);
+//       }
+//     });
+//   };
 
-  var observer = new IntersectionObserver(lazyLoad, options);
-  lazyImages.forEach(function (image) {
-    observer.observe(image);
-  });
-});
+//   var observer = new IntersectionObserver(lazyLoad, options);
+//   lazyImages.forEach(function (image) {
+//     observer.observe(image);
+//   });
+// });
 
 function sendEmail() {
   Email.send({
