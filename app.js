@@ -1,3 +1,10 @@
+// Check if the current path is /spotify
+if (window.location.pathname === "/spotify") {
+  // Redirect to your backend
+  window.location.href =
+    "https://spotify-api-integration-nopx.onrender.com/spotify";
+}
+
 (function () {
   [...document.querySelectorAll(".control")].forEach((button) => {
     button.addEventListener("click", function () {
@@ -11,30 +18,6 @@
     document.body.classList.toggle("light-mode");
   });
 })();
-// implemented lazy loading
-// document.addEventListener("DOMContentLoaded", function () {
-//   var lazyImages = document.querySelectorAll("img[data-src]");
-
-//   var options = {
-//     threshold: 0.5, // Trigger when image is 50% in view
-//   };
-
-//   var lazyLoad = function (entries, observer) {
-//     entries.forEach(function (entry) {
-//       if (entry.isIntersecting) {
-//         var img = entry.target;
-//         img.src = img.getAttribute("data-src");
-//         img.removeAttribute("data-src");
-//         observer.unobserve(img);
-//       }
-//     });
-//   };
-
-//   var observer = new IntersectionObserver(lazyLoad, options);
-//   lazyImages.forEach(function (image) {
-//     observer.observe(image);
-//   });
-// });
 
 function sendEmail() {
   Email.send({
